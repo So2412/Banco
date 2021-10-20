@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/stylecu.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizarcu.js"></script>
+    <script src="./js/eliminarcu.js"></script>
+    <title>Cuenta</title>
+    <link rel="shortcut icon" href="imagenes/logoi.png">
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_large.png">
+        </div>
+            <ul class="menu">
+            <li>
+                <a href="/lclientes">Clientes</a>
+            </li>
+             <li>
+                <a href="/lcrerditos">Creditos</a>
+            </li>
+            <li>
+                <a href="/llineas">Lineas de credito</a>
+            </li>
+            <li>
+                <a href="/cuenta">Cuentas</a>
+            </li>
+            <li>
+                <a href="#">Transferencia</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+            <div class="usuarios-box">
+                <h1>Transferencia</h1>
+                <form action="/frminsertartra" method="POST">
+                    <!--Documento-->
+                    <label for="codigo">Documento</label>
+                    <input type="number" name="DocCli" placeholder="Ingrese codigo">
+
+        
+                    <!--Tipo-->
+                    <label for="cuenta">Tipo de cuenta</label>
+                    <input type="text" name="Tipo" placeholder="Ahorro o Cliente">
+                    
+                    <!--Saldo-->
+                    <label for="saldo">Saldo</label>
+                    <input type="text" name="Saldo" placeholder="Ingrese saldo">
+                    
+         
+        
+                    <input type="submit" value="Enviar">
+                    </form>
+    </div>
+    </body>
+  
+    
+     
+</body>
+</html>

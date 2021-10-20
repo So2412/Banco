@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <script src="./js/eliminar.js"></script>
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/styleusu.css">
+    <title>Usuarios</title>
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_large.png">
+        </div>
+            <ul class="menu">
+            <li>
+                <a href="/lclientes">Clientes</a>
+            </li>
+             <li>
+                <a href="/lcreditos">Creditos</a>
+            </li>
+            <li>
+                <a href="#">Lineas de creditos</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+            <div class="usuarios-box">
+                <h1>Usuarios</h1>
+                <form action="/frminsertar" method="POST">
+                    <!--Documento usuario-->
+                    <label for="documento">Documento Usuario</label>
+                    <input type="text" name="DocCli" placeholder="Ingrese documento">
+
+                    <!--Nombre usuario-->
+                    <label for="nombre">Nombre Usuario</label>
+                    <input type="text"  name="NomUsu" placeholder="Ingrese nombre">
+        
+                    <!--Contraseña-->
+                    <label for="contraseña">Contraseña</label>
+                    <input type="password" name="Clave" placeholder="Ingrese contraseña">
+                    
+                    <!--rol-->
+                    <label for="rol">Rol</label>
+                    <input type="text" name="Rol" placeholder="Ingrese rol">
+                    
+                    <!--Estado-->
+                    <label for="estado">Estado</label>
+                    <input type="text" name="Estado" placeholder="Ingrese estado">
+
+                     <!--Imagen-->
+                     <label for="imagen">Imagen</label>
+                     <input type="text" name="Imagen" placeholder="Ingrese imagen">
+         
+        
+                     <input  type="submit"  value="Ingresar"   >
+                </form>
+            </div>    
+                
+    </body>
+ <form action="" name="frm" id="frm">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Documento</th>
+                <th>Usuario</th>
+                <th>Clave</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Imagen</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <% datos.forEach(function(datos){%>
+                
+                <tr>
+                    <td><input type="text"  value="<%=datos.DocCli%>" name="DocCli" id="doc"       class="doc"  ></td>
+                    <td><input type="text"  value="<%=datos.NomUsu%>" name="NomUsu" id="usu"       class="usu"  ></td>
+                    <td><input type="text"  value="<%=datos.Clave%>"  name="Clave"  id="cla"       class="cla"  ></td>
+                    <td><input type="text"  value="<%=datos.Rol%>"    name="Rol"    id="rol"       class="rol"  ></td>
+                    <td><input type="text"  value="<%=datos.Estado%>" name="Estado" id="est"       class="est" ></td>
+                    <td><input type="text"  value="<%=datos.Imagen%>" name="Imagen" id="img"       class="img"  ></td>
+                 
+                    <td><input type="submit"  value="actualizar" name="btnact" id="btnact"   class="btnact"   ></td>
+                    <td><input type="submit"  value="eliminar "  name="btneli" id="btneli"   class="btneli"   ></td>
+                </tr>            
+            <%})%>
+        </tbody>    
+
+    </table>    
+
+ </form>
+
+   
+</html>
+</body>
+</html>

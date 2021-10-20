@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/styleli.css">
+    <title>Lineas de credito</title>
+    <link rel="shortcut icon" href="imagenes/logoi.png">
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_large.png">
+        </div>
+            <ul class="menu">
+            <li>
+                <a href="/cliente">Clientes</a>
+            </li>
+             <li>
+                <a href="/credito">Creditos</a>
+            </li>
+            <li>
+                <a href="#">Lineas de credito</a>
+            </li>
+            <li>
+                <a href="/cuenta">Cuentas</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+           
+            </div>
+    </body>
+    <form action="" name="frm" id="frm">
+        <table class="table2">
+            <thead>
+                <tr>
+                    <th>Codigo Linea</th>
+                    <th>Nombre Linea</th>
+                    <th>Monto Maximo Credito</th>
+                    <th>Plazo Maximo Credito</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <% datos.forEach(function(datos){%>
+                    
+                    <tr>
+                        <td><input type="text"  value="<%=datos.CodLinea%>"              name="CodLinea"          id="codl"       class="codl"  ></td>
+                        <td><input type="text"  value="<%=datos.NomLinea%>"              name="NomLinea"          id="noml"       class="noml"  ></td>
+                        <td><input type="text"  value="<%=datos.MontoMaxCredito%>"       name="MontoMaxCredito"   id="montm"      class="montm"  ></td>
+                        <td><input type="text"  value="<%=datos.PlazoMaxCred%>"          name="PlazoMaxCred"      id="plam"       class="plam"  ></td>
+                        
+                    </tr>            
+                <%})%>
+            </tbody>    
+    
+        </table>    
+    
+     </form>
+    
+</body>
+</html>

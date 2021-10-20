@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/stylecre.css">
+    <title>Creditos</title>
+    <link rel="shortcut icon" href="imagenes/logoi.png">
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_white_large.png">
+        </div>
+            <ul class="menu">
+            <li>
+                <a href="/cliente">Clientes</a>
+            </li>
+             <li>
+                <a href="#">Creditos</a>
+            </li>
+            <li>
+                <a href="/linea">Lineas de creditos</a>
+            </li>
+            <li>
+                <a href="/cuenta">Cuentas</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+           
+
+    <form action="" name="frm" id="frm">
+        <table class="table2">
+            <thead>
+                <tr>
+                    <th>Codigo credito</th>
+                    <th>Documento</th>
+                    <th>Codigo Linea</th>
+                    <th>Monto prestado</th>
+                    <th>Fecha Aprobacion</th>
+                    <th>Plazo</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <% datos.forEach(function(datos){%>
+                    
+                    <tr>
+                        <td><input type="text"  value="<%=datos.CodigoCredito%>"       name="CodigoCredito"       id="codc"       class="codc"  ></td>
+                        <td><input type="text"  value="<%=datos.DocCli%>"              name="DocCli"              id="doc"       class="doc"  ></td>
+                        <td><input type="text"  value="<%=datos.CodLinea%>"            name="CodLinea"            id="codl"       class="codl"  ></td>
+                        <td><input type="text"  value="<%=datos.MontoPrestado%>"       name="MontoPrestado"       id="mon"       class="mon"  ></td>
+                        <td><input type="text"  value="<%=datos.FechaAproba%>"         name="FechaAproba"         id="feca"       class="feca" ></td>
+                        <td><input type="text"  value="<%=datos.Plazo%>"               name="Plazo"               id="pla"       class="pla"  ></td>
+                        
+        
+                    </tr>            
+                <%})%>
+            </tbody>    
+    
+        </table>    
+    
+     </form>
+    
+      
+</body>
+</html>

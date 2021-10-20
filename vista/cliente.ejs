@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/stylecli.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/cliactualizar.js"></script>
+    <script src="./js/clieliminar.js"></script>
+    <title>Clientes</title>
+    <link rel="shortcut icon" href="imagenes/logoi.png">
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_large.png">
+        </div>
+            <ul class="menu">
+            <li>
+                <a href="/usuario">Actualizar usuario</a>
+            </li>    
+             <li>
+                <a href="#">Clientes</a>
+            </li>
+            <li>
+                <a href="/credito">Creditos</a>
+            </li>
+            <li>
+                <a href="/linea">Lineas de credito</a>
+            </li>
+            <li>
+                <a href="/cuenta">Cuenta</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+            
+             <form action="" name="frm" id="frm">
+                <table class="table2">
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Celular</th>
+                            <th>Sexo</th>
+                            <th>Fecha de nacimiento</th>
+                            <th>Actualizar</th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                        <% datos.forEach(function(datos){%>
+                            
+                            <tr>
+                                <td><input type="text"  value="<%=datos.DocCli%>"       name="DocCli"       id="docu"       class="docu"  ></td>
+                                <td><input type="text"  value="<%=datos.NomCli%>"       name="NomCli"       id="nomu"       class="nomu"  ></td>
+                                <td><input type="text"  value="<%=datos.ApeCli%>"       name="ApeCli"       id="apeu"       class="apeu"  ></td>
+                                <td><input type="text"  value="<%=datos.CorreoCli%>"    name="CorreoCli"    id="coru"       class="coru"  ></td>
+                                <td><input type="text"  value="<%=datos.Celular%>"      name="Celular"      id="celu"       class="celu" ></td>
+                                <td><input type="text"  value="<%=datos.Sexo%>"         name="Sexo"         id="sexu"       class="sexu"  ></td>
+                                <td><input type="text"  value="<%=datos.FechaNacCli%>"  name="FechaNacCli"  id="fecu"       class="fecu"  ></td>
+                                
+                                <td><input type="submit"  value="actualizar" name="btnactc" id="btnactc"   class="btnactc"   ></td>
+                        
+                            </tr>            
+                        <%})%>
+                    </tbody>    
+            
+                </table>    
+            
+             </form>
+            
+              
+</body>
+</html>

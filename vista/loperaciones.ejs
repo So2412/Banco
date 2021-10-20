@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/stylecu.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizarcu.js"></script>
+    <script src="./js/eliminarcu.js"></script>
+    <title>Cuenta</title>
+    <link rel="shortcut icon" href="imagenes/logoi.png">
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_large.png">
+        </div>
+            <ul class="menu">
+            <li>
+                <a href="/lclientes">Clientes</a>
+            </li>
+             <li>
+                <a href="/lcrerditos">Creditos</a>
+            </li>
+            <li>
+                <a href="/llineas">Lineas de credito</a>
+            </li>
+            <li>
+                <a href="#">Cuentas</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+            <div class="usuarios-box">
+                <h1>Cuentas</h1>
+                <form action="/frminsertarcu" method="POST">
+                    <!--Codigo cuenta-->
+                    <label for="codigo">Codigo cuenta</label>
+                    <input type="number" name="CodCu" placeholder="Ingrese codigo">
+
+                    <!--Documento-->
+                    <label for="documento">Documento</label>
+                    <input type="text" name="DocCli"placeholder="Ingrese documento">
+        
+                    <!--Tipo-->
+                    <label for="cuenta">Tipo de cuenta</label>
+                    <input type="text" name="Tipo" placeholder="Ahorro o Cliente">
+                    
+                    <!--Saldo-->
+                    <label for="saldo">Saldo</label>
+                    <input type="text" name="Saldo" placeholder="Ingrese saldo">
+                    
+         
+        
+                    <input type="submit" value="Ingresar">
+                    </form>
+    </div>
+    </body>
+  
+    <form action="" name="frm" id="frm">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Codigo cuenta</th>
+                    <th>Documento</th>
+                    <th>Tipo de cuenta</th>
+                    <th>Saldo</th>
+                    <th>Actualizar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <% datos.forEach(function(datos){%>
+                    
+                    <tr>
+                        <td><input type="text"  value="<%=datos.CodCu%>"  name="CodCu"    id="cod"       class="cod"  ></td>
+                        <td><input type="text"  value="<%=datos.DocCli%>" name="DocCli"   id="doc"       class="doc"  ></td>
+                        <td><input type="text"  value="<%=datos.Tipo%>"   name="Tipo"     id="tip"       class="tip"  ></td>
+                        <td><input type="text"  value="<%=datos.Saldo%>"  name="Saldo"    id="sal"       class="sal"  ></td>
+                        
+                        <td><input type="submit"  value="actualizar" name="ac" id="ac"   class="ac"   ></td>
+                        <td><input type="submit"  value="eliminar "  name="el" id="el"   class="el"   ></td>
+                    </tr>            
+                <%})%>
+            </tbody>    
+    
+        </table>    
+    
+     </form>
+     
+</body>
+</html>

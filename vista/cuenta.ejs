@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/stylecu.css">
+    <title>Cuenta</title>
+    <link rel="shortcut icon" href="imagenes/logoi.png">
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_large.png">
+        </div>
+            <ul class="menu">
+            <li>
+                <a href="/cliente">Clientes</a>
+            </li>
+             <li>
+                <a href="/credito">Creditos</a>
+            </li>
+            <li>
+                <a href="/linea">Lineas de credito</a>
+            </li>
+            <li>
+                <a href="#">Cuentas</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+    </body>
+  
+    <form action="" name="frm" id="frm">
+        <table class="table2">
+            <thead>
+                <tr>
+                    <th>Codigo cuenta</th>
+                    <th>Documento</th>
+                    <th>Tipo de cuenta</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <% datos.forEach(function(datos){%>
+                    
+                    <tr>
+                        <td><input type="text"  value="<%=datos.CodCu%>"  name="CodCu"    id="cod"       class="cod"  ></td>
+                        <td><input type="text"  value="<%=datos.DocCli%>" name="DocCli"   id="doc"       class="doc"  ></td>
+                        <td><input type="text"  value="<%=datos.Tipo%>"   name="Tipo"     id="tip"       class="tip"  ></td>
+                        <td><input type="text"  value="<%=datos.Saldo%>"  name="Saldo"    id="sal"       class="sal"  ></td>
+                        
+                        <td><a href="/transferir"><input type="button"  value="Transferencia"></a> </td>
+                        <td><a href="/consignando"><input type="button" value="Consignar"></a> </td>
+                        <td><a href="/retirando"><input type="button" value="Retirar"></a> </td>
+                    </tr>            
+                <%})%>
+            </tbody>    
+    
+        </table>    
+    
+     </form>
+     
+</body>
+</html>

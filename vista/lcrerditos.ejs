@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/stylecre.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizarcre.js"></script>
+    <script src="./js/eliminarcre.js"></script>
+    <title>Creditos</title>
+    <link rel="shortcut icon" href="imagenes/logoi.png">
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_white_large.png">
+        </div>
+            <ul class="menu">
+            <li>
+                <a href="/lclientes">Clientes</a>
+            </li>
+             <li>
+                <a href="/lcreditos">Creditos</a>
+            </li>
+            <li>
+                <a href="/llineas">Lineas de creditos</a>
+            </li>
+            <li>
+                <a href="/lcuentas">Cuentas</a>
+            </li>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+            <div class="creditos-box">
+                <h1>Creditos</h1>
+                <form action="/frminsertarcre" method="POST">
+                    <!--codigo credito-->
+                    <label for="codigo">Codigo Credito</label>
+                    <input type="text" name="CodigoCredito" placeholder="Ingrese codigo">
+
+                    <!--documento cliente-->
+                    <label for="documento">Documento Cliente</label>
+                    <input type="number" name="DocCli" placeholder="Ingrese documento">
+        
+                    <!--codigo linea-->
+                    <label for="clinea">Codigo Linea</label>
+                    <input type="text" name="CodLinea" placeholder="Ingrese codigo linea">
+                    
+                    <!--monto-->
+                    <label for="monto">Monto Prestado</label>
+                    <input type="text" name="MontoPrestado" placeholder="Ingrese monto">
+                    
+                    <!--Fecha aproba-->
+                    <label for="fecha">Fecha Aprobacion</label>
+                    <input type="date" name="FechaAproba" placeholder="Ingrese fecha">
+
+                     <!--plazo-->
+                     <label for="plazo">Plazo</label>
+                     <input type="number" name="Plazo" placeholder="Ingrese plazo">
+         
+        
+                    <input type="submit" value="Ingresar">
+                    </form>
+            </div>
+    </body>
+
+    <form action="" name="frm" id="frm">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Codigo credito</th>
+                    <th>Documento</th>
+                    <th>Codigo Linea</th>
+                    <th>Monto prestado</th>
+                    <th>Fecha Aprobacion</th>
+                    <th>Plazo</th>
+                    <th>Actualizar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <% datos.forEach(function(datos){%>
+                    
+                    <tr>
+                        <td><input type="text"  value="<%=datos.CodigoCredito%>"       name="CodigoCredito"       id="codc"       class="codc"  ></td>
+                        <td><input type="text"  value="<%=datos.DocCli%>"              name="DocCli"              id="doc"       class="doc"  ></td>
+                        <td><input type="text"  value="<%=datos.CodLinea%>"            name="CodLinea"            id="codl"       class="codl"  ></td>
+                        <td><input type="text"  value="<%=datos.MontoPrestado%>"       name="MontoPrestado"       id="mon"       class="mon"  ></td>
+                        <td><input type="text"  value="<%=datos.FechaAproba%>"         name="FechaAproba"         id="feca"       class="feca" ></td>
+                        <td><input type="text"  value="<%=datos.Plazo%>"               name="Plazo"               id="pla"       class="pla"  ></td>
+                        
+                        <td><input type="submit"  value="actualizar" name="act" id="act"   class="act"   ></td>
+                        <td><input type="submit"  value="eliminar "  name="eli" id="eli"   class="eli"   ></td>
+                    </tr>            
+                <%})%>
+            </tbody>    
+    
+        </table>    
+    
+     </form>
+    
+      
+</body>
+</html>

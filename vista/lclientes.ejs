@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/cliactualizar.js"></script>
+    <script src="./js/clieliminar.js"></script>
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/stylecli.css">
+    <title>Clientes</title>
+    <link rel="shortcut icon" href="imagenes/logoi.png">
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_large.png">
+        </div>
+            <ul class="menu">
+             <li>
+                <a href="#">Clientes</a>
+            </li>
+            <li>
+                <a href="/lcreditos">Creditos</a>
+            </li>
+            <li>
+                <a href="/llineas">Lineas de credito</a>
+            </li>
+            <li>
+                <a href="/lcuentas">Cuentas</a>
+            </li>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+            <div class="clientes-box">
+                <h1>Clientes</h1>
+                <form action="/frminsertarcl" method="POST">
+                    <!--Documento cliente-->
+                    <label for="documento">Documento cliente</label>
+                    <input type="text"  name="DocCli" placeholder="Ingrese documento">
+
+                    <!--Nombre cliente-->
+                    <label for="nombre">Nombre Cliente</label>
+                    <input type="text" name="NomCli" placeholder="Ingrese nombre">
+        
+                    <!--Apellido-->
+                    <label for="apellido">Apellido Cliente</label>
+                    <input type="text" name="ApeCli" placeholder="Ingrese apellido">
+                    
+                    <!--correo-->
+                    <label for="correo">Correo</label>
+                    <input type="text" name="CorreoCli" placeholder="Ingrese email">
+                    
+                    <!--celular-->
+                    <label for="celular">Celular</label>
+                    <input type="text" name="Celular" placeholder="Ingrese numero">
+
+                    <!--sexo-->
+                    <label for="sexo">Sexo</label>
+                    <input type="text" name="Sexo" placeholder="Ingrese sexo">
+
+                    <!--Fecha nacimiento-->
+                    <label for="fecha">Fecha de nacimiento</label>
+                    <input type="date" name="FechaNacCli" placeholder="Ingrese fecha">
+         
+        
+                    <input type="submit" value="Ingresar">
+                </form>
+               </div> 
+             </body>
+             <form action="" name="frm" id="frm">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Celular</th>
+                            <th>Sexo</th>
+                            <th>Fecha de nacimiento</th>
+                            <th>Actualizar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                        <% datos.forEach(function(datos){%>
+                            
+                            <tr>
+                                <td><input type="text"  value="<%=datos.DocCli%>"       name="DocCli"       id="doc"       class="doc"  ></td>
+                                <td><input type="text"  value="<%=datos.NomCli%>"       name="NomCli"       id="nom"       class="nom"  ></td>
+                                <td><input type="text"  value="<%=datos.ApeCli%>"       name="ApeCli"       id="ape"       class="ape"  ></td>
+                                <td><input type="text"  value="<%=datos.CorreoCli%>"    name="CorreoCli"    id="cor"       class="cor"  ></td>
+                                <td><input type="text"  value="<%=datos.Celular%>"      name="Celular"      id="cel"       class="cel" ></td>
+                                <td><input type="text"  value="<%=datos.Sexo%>"         name="Sexo"         id="sex"       class="sex"  ></td>
+                                <td><input type="text"  value="<%=datos.FechaNacCli%>"  name="FechaNacCli"  id="fec"       class="fec"  ></td>
+                                
+                                <td><input type="submit"  value="actualizar" name="btnac" id="btnac"   class="btnac"   ></td>
+                                <td><input type="submit"  value="eliminar "  name="btnel" id="btnel"   class="btnel"   ></td>
+                            </tr>            
+                        <%})%>
+                    </tbody>    
+            
+                </table>    
+            
+             </form>
+            
+              
+</body>
+</html>

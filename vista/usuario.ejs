@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <link rel="stylesheet" href="css/styleini.css">
+    <link rel="stylesheet" href="css/styleusu.css">
+    <title>Usuarios</title>
+</head>
+<body>
+    <body>
+        <div >
+            <img src="imagenes/logo_large.png">
+        </div>
+            <ul class="menu">
+            <li>
+                <a href="/cliente">Clientes</a>
+            </li>
+             <li>
+                <a href="/credito">Creditos</a>
+            </li>
+            <li>
+                <a href="/linea">Lineas de creditos</a>
+            </li>
+            <li>
+                <a href="/cuenta">Cuentas</a>
+            </li>
+            <li>
+                <a href="cerrar">Cerrar sesion</a>
+            </li>
+            <li>
+                <p><%=uss%></p>
+            </li>
+            </ul>
+            
+ <form action="" name="frm" id="frm">
+    <table class="table2">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Clave</th>
+                <th>Actualizar</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <% datos.forEach(function(datos){%>
+                
+                <tr>
+                    <input type="hidden"  value="<%=datos.DocCli%>" name="DocCli" id="doc"       class="doc"  >
+                    <td><input type="text"  value="<%=datos.NomUsu%>" name="NomUsu" id="usu"       class="usu"  ></td>
+                    <td><input type="text"  value="<%=datos.Clave%>"  name="Clave"  id="cla"       class="cla"  ></td>
+ 
+                    <td><input type="submit"  value="actualizar" name="btnactu" id="btnactu"   class="btnactu"   ></td>
+                </tr>            
+            <%})%>
+        </tbody>    
+
+    </table>    
+
+ </form>
+
+   
+</html>
+</body>
+</html>
