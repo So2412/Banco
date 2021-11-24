@@ -73,4 +73,42 @@ $(document).ready(function(){
     
     })
 
+//Ingresar datos usuario con ajax
+$(document).ready(function(){
+
+    $('.ingre').on('click',function(){
+       
+       let btn= $('.ingre').index(this);
+       let docu=$('.doc').eq(btn);
+       let usuu=$('.usu').eq(btn);
+       let clau=$('.cla').eq(btn);
+       let rolu=$('.rol').eq(btn);
+       let estu=$('.est').eq(btn);
+       let imgu=$('.img').eq(btn);
+    
+    
+       let d=docu.val();
+       let u=usuu.val();
+       let c=clau.val();
+       let r=rolu.val();
+       let e=estu.val();
+       let i=imgu.val();
+       alert("datos"+d+u+c+r+e+i)
+    
+    
+    
+    $.ajax({
+    type:"POST",
+    url:'/frminsertar',
+    data:{
+        dl:d,ul:u,cl:c,rl:r,el:e,il:i
+    }
+    
+    });  
+       
+    });
+    
+    
+    
+    })    
 

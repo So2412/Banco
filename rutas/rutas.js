@@ -26,7 +26,8 @@ rutas.get('/retirando',controller.retirando);
 rutas.post('/frminsertartra',controller.insertrans);
 rutas.post('/frminsertarcon',controller.consignarcuen);
 rutas.post('/frminsertarret',controller.retirarcue);
-rutas.post('/frminsertar',controller.insertar);//Permite que al inngresar los datos en el formulario, queden guardados y encriptados en la base;//permite que una pagina se redireccione a la vista de cliente
+//rutas.post('/frminsertar',controller.insertar);//Permite que al inngresar los datos en el formulario, queden guardados y encriptados en la base;//permite que una pagina se redireccione a la vista de cliente
+rutas.post('/frminsertar',controller.insertara);
 rutas.post('/frminsertarcu',controller.insertarcu);
 //rutas.get('/transferencia',controller.insertrans);
 rutas.post('/actualizar',controller.actualizar);

@@ -330,6 +330,29 @@ controller.insertar=async(req,res,next)=>{
      })
  }
 
+ controller.insertara=async(req,res,next)=>{
+    const docb=req.body.dl;
+    const usub=req.body.ul;
+    const clab=req.body.cl;
+    const rolb=req.body.rl;
+    const estb=req.body.el;
+    const imgb=req.body.il;
+    const password=await bcryptjs.hash(clab,8)
+    
+    //console.log("Actualizar",doc,usu);
+    cnn.query('INSERT INTO bancousuarios SET?',{DocCli:docb, NomUsu:usub,Clave:password,Rol:rolb,Estado:estb,Imagen:imgb}, (err,respbb)=>{
+      if(err){
+          next(new Error(err));
+      }
+      else{
+          console.log("Ingresado")
+          res.redirect('lusuarios');
+      }
+    
+    })
+    
+    }
+
 controller.insertarcu=(req,res,next)=>{
     console.log(req.body) 
  const co=req.body.CodCu;//Captura el dato del documento del cliente

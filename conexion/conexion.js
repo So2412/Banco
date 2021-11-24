@@ -18,8 +18,8 @@ module.exports=()=>mongoose.connect(uri,{useNewUrlParser: true, useUnifiedTopolo
 const mysql=require('mysql');//conecta la base de datos que se creo en mysql
 module.exports=()=>
 mysql.createConnection({
-    host:'localhost',//nombre del host de la base
-    user:'root',//nombre del user de la base
-    password:'',//contraseña del user(si hay contraseña)
-    database:'dbbancoh'//Nombre de la base de datos que se esta utilizando
+    host:'br3xb7odxlqde32ttscq-mysql.services.clever-cloud.com',//nombre del host de la base
+    user:'upj1ldablevz0sp7',//nombre del user de la base
+    password:'2VevPonbroaZKgbyZyky',//contraseña del user(si hay contraseña)
+    database:'br3xb7odxlqde32ttscq'//Nombre de la base de datos que se esta utilizando
 })
